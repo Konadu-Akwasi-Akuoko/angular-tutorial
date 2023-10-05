@@ -1,27 +1,36 @@
-# AngularBasics
+# AngularBasics - Notes
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 16.2.4.
+## Table of Content
 
-## Development server
+1. [What is a component in Angular](#what-is-a-component-in-angular)
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The application will automatically reload if you change any of the source files.
+## What is a component in Angular
 
-## Code scaffolding
+**Component** is a Typescript class decorated with `@Component` decorator and it contains methods and properties that we can use in our HTML.
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
+In TypeScript, a decorator is a special kind of declaration that can be attached to a class, method, accessor, property, or parameter. Decorators use the form `@expression`, where `expression` must evaluate to a function that will be called at runtime with information about the decorated declaration [Source 2](https://blog.logrocket.com/practical-guide-typescript-decorators/).
 
-## Build
+Decorators can be used to modify or augment the behavior of the target, such as a class or method. They're used for a variety of tasks, including logging, type checking, or modifying the target's functionality [Source 2](https://blog.logrocket.com/practical-guide-typescript-decorators/).
 
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory.
+In an Angular application the main component is the root component, and there is only one root component, in our case it is the `app-root` component. The root component can hold many other nested components.
 
-## Running unit tests
+An example of an Angular component:
 
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
+``` typescript
+@Component({
+  selector: 'app-root',
+  templateUrl: './app.component.html',
+  styleUrls: ['./app.component.css'],
+})
+export class AppComponent {
+  title = 'AngularBasics';
+  name = 'Akwasi Konadu Akuoko';
+  age: number = 54;
+  getNameAndAge = () => {
+    return `My name is ${this.name} and I am ${this.age} years old`;
+  };
+}
 
-## Running end-to-end tests
+```
 
-Run `ng e2e` to execute the end-to-end tests via a platform of your choice. To use this command, you need to first add a package that implements end-to-end testing capabilities.
-
-## Further help
-
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.io/cli) page.
+## Creating a custom component in Angular
