@@ -32,5 +32,3 @@ export class AppComponent {
 }
 
 ```
-
-## Creating a custom component in Angular
